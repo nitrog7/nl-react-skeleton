@@ -1,7 +1,10 @@
-NL React Falcor Skeleton
+NL React Skeleton
 =======================
 
-A simple skeleton to start you off on your ReactJS project. Uses Flux framework and Falcor.
+A simple skeleton to start you off on your ReactJS project. Uses the following:
+
+- Flux (http://facebook.github.io/flux/)
+- React Router (https://github.com/rackt/react-router)
 
 Getting Started
 ---------------
@@ -58,12 +61,6 @@ The folder structure provided is only meant to serve as a guide, it is by no mea
 |   └── main.js              # Application bootstrap and rendering
 └── karma.conf.js            # Karma configuration settings
 ```
-
-### Components vs. Views vs. Layouts
-
-**TL;DR:** They're all components.
-
-This distinction may not be important for you, but as an explanation: A **Layout** is something that describes an entire page structure, such as a fixed navigation, viewport, sidebar, and footer. Most applications will probably only have one layout, but keeping these components separate makes their intent clear. **Views** are components that live at routes, and are generally rendered within a **Layout**. What this ends up meaning is that, with this structure, nearly everything inside of **Components** ends up being a dumb component.
 
 Webpack
 -------
