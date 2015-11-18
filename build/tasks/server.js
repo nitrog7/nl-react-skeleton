@@ -17,6 +17,11 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
+// Falcor
+import falcor from 'falcor';
+import falcorExpress from 'falcor-express';
+import router from '../../model/router';
+
 
 gulp.task('server:dev', (done) => {
   let port = config.port.dev;
@@ -29,6 +34,11 @@ gulp.task('server:dev', (done) => {
 
   // Static files
   app.use(express.static(config.absolute(config.directories.dist)));
+
+  // Falcor route
+  app.use('/' + config.falcor.endpoint, falcorExpress.dataSourceRoute((req, res) => {
+    return new router('FAKE_USER_SESSION_KEY');
+  }));
 
   // Webpack middleware
   config.webpack.devtool = 'eval';
@@ -136,6 +146,11 @@ gulp.task('server:release', (done) => {
 
   // Static files
   app.use(express.static(config.absolute(config.directories.dist)));
+
+  // Falcor route
+  app.use('/' + config.falcor.endpoint, falcorExpress.dataSourceRoute((req, res) => {
+    return new router('FAKE_USER_SESSION_KEY');
+  }));
 
   // Dynamic SPA route
   app.use('*', (req, res) => {

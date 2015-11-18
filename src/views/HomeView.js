@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppStore } from 'stores/index';
+import { AppStore, FalcorStore } from 'stores/index';
 import DemoButton from 'components/DemoButton';
 
 export class HomeView extends React.Component {
@@ -21,10 +21,11 @@ export class HomeView extends React.Component {
 
   render() {
     let hello = AppStore.get('hello');
-
+    let helloFalcor = FalcorStore.get('hello');
+    console.log('helloFalcor', helloFalcor);
     return (
       <div className='container text-center'>
-        <h1>NL React Skeleton</h1>
+        <h1>NL React Falcor Skeleton</h1>
         <p>{hello}</p>
         <DemoButton/>
       </div>

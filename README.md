@@ -3,8 +3,9 @@ NL React Skeleton
 
 A simple skeleton to start you off on your ReactJS project. Uses the following:
 
-- Flux (http://facebook.github.io/flux/)
+- Flux (http://facebook.github.io/flux)
 - React Router (https://github.com/rackt/react-router)
+- Falcor (http://netflix.github.io/falcor)
 
 Getting Started
 ---------------
@@ -48,7 +49,10 @@ The folder structure provided is only meant to serve as a guide, it is by no mea
 .
 ├── build                    # All build-related configuration
 │   ├── tasks                # Gulp configuration files
-|   ├── config.js            # Project configuration settings
+|   └── config.js            # Project configuration settings
+├── model                    # Routes used by Falcor
+│   ├── routes               # Falcor routes
+|   └── router.js            # Falcor router
 └── src                      # Application source code
 |   ├── actions              # Flux actions
 |   ├── components           # React components

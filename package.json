@@ -4,15 +4,15 @@
   "description": "NL React Skeleton",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nitrog7/nl-react-falcor-skeleton.git"
+    "url": "https://github.com/nitrog7/nl-react-skeleton.git#falcor"
   },
   "keywords": [
     "nitrogenlabs",
     "react",
     "router",
     "flux",
-    "falcor",
-    "es6"
+    "es6",
+    "falcor"
   ],
   "authors": [
     "Giraldo Rosales <giraldo@nitrogenlabs.com>"
@@ -25,6 +25,11 @@
     "body-parser": "^1.14.1",
     "connect-history-api-fallback": "^1.1.0",
     "express": "^4.13.3",
+    "falcor": "^0.1.14",
+    "falcor-express": "^0.1.2",
+    "falcor-http-datasource": "^0.1.2",
+    "falcor-json-graph": "^1.1.7",
+    "falcor-router": "^0.2.11",
     "flux": "^2.1.1",
     "history": "^1.12.5",
     "lodash": "^3.10.1",

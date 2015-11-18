@@ -113,6 +113,11 @@ config.yuidoc = {
   render: {}
 };
 
+// Falcor
+config.falcor = {
+  endpoint: 'model.json'
+};
+
 // Webpack Vendor chunk
 const commonChunk = new webpack.optimize.CommonsChunkPlugin(
   'vendor', '[name].js'
@@ -129,7 +134,10 @@ config.webpack = {
       'history',
       'react',
       'react-router',
-      'flux'
+      'flux',
+      'falcor',
+      'falcor-json-graph',
+      'falcor-http-datasource'
     ]
   },
   output: {
