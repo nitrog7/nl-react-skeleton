@@ -15,6 +15,10 @@ export class HomeView extends React.Component {
     AppStore.removeChangeListener(this._onChange);
   }
 
+  _onChange() {
+
+  }
+
   render() {
     let hello = AppStore.get('hello');
 
