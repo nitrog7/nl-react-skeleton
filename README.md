@@ -3,8 +3,9 @@ NL React Skeleton
 
 A simple skeleton to start you off on your ReactJS project. Uses the following:
 
-- Flux (http://facebook.github.io/flux/)
-- React Router (https://github.com/rackt/react-router)
+- React v0.14.3 (https://facebook.github.io/react)
+- React Router v1.0.0 (https://github.com/rackt/react-router)
+- Flux v2.1.1 (http://facebook.github.io/flux)
 
 Getting Started
 ---------------
@@ -28,6 +29,9 @@ Runs the Webpack build system with your current NODE_ENV and compiles the applic
 
 #### `gulp test`
 Runs unit tests with Karma.
+
+#### `gulp doc`
+Generate documentation using YUIDoc (http://yui.github.io/yuidoc/)
 
 #### `gulp deploy`
 Helper script to run tests and then, on success, compile your application.
