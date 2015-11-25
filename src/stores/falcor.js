@@ -23,7 +23,9 @@ let FalcorStore = objectAssign({}, EventEmitter.prototype, {
     return _model.getValue(path);
   },
   get: (...pathSet) => {
-    return _model.get(...pathSet);
+    return _model.get(...pathSet).then(data => {
+      return data.json;
+    });
   },
   setValue: path => {
     return _model.setValue(path);

@@ -22,117 +22,20 @@ import falcor from 'falcor';
 import falcorExpress from 'falcor-express';
 import router from '../../model/router';
 
+//import exec from 'gulp-exec';
+import childProcess from 'child_process';
 
 gulp.task('server:dev', (done) => {
-  let port = config.port.dev;
-
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({
-    extended: true
-  }));
-  app.use(history());
-
-  // Static files
-  app.use(express.static(config.absolute(config.directories.dist)));
-
-  // Falcor route
-  app.use('/' + config.falcor.endpoint, falcorExpress.dataSourceRoute((req, res) => {
-    return new router('FAKE_USER_SESSION_KEY');
-  }));
-
-  // Webpack middleware
-  config.webpack.devtool = 'eval';
-  config.webpack.debug = true;
-  config.webpack.eslint.emitWarning = true;
-  config.webpack.entry.app.push(
-    'webpack-hot-middleware/client'
-  );
-  config.webpack.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-      APP_VERSION: JSON.stringify(version)
-    })
-  );
-  config.webpack.module.loaders = [
-    {
-      loader: 'babel',
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      query: {
-        cacheDirectory: true,
-        stage: 0,
-        optional: [
-          'es7.classProperties'
-        ],
-        plugins: ['react-transform'],
-        extra: {
-          'react-transform': {
-            transforms: [
-              {
-                transform: 'react-transform-hmr',
-                imports: ['react'],
-                locals: ['module']
-              }, {
-                transform: 'react-transform-catch-errors',
-                imports: ['react', 'redbox-react']
-              }
-            ]
-          }
-        }
-      }
-    }
-  ];
-
-  let compiler = webpack(config.webpack, error => {
-    if(error) {
-      throw new util.PluginError('webpack', error);
-    }
+  let exec = childProcess.exec;
+  let proc = exec('nodemon --watch model development.js');
+  proc.stderr.on('data', data => {
+    return process.stdout.write(data);
+    done();
   });
-
-  app.use(webpackDevMiddleware(compiler, {
-    contentBase: config.directories.src,
-    publicPath: 'http://localhost:' + config.port.dev + '/',
-    hot: true,
-    inline: true,
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    },
-    lazy: false,
-    noInfo: true,
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
-  }));
-
-  app.use(webpackHotMiddleware(compiler, {
-    log: util.log,
-    reload: true
-  }));
-
-  // Dynamic SPA route
-  app.use('*', (req, res) => {
-    res.sendFile(config.absolute(config.directories.src, config.filenames.index));
+  proc.stdout.on('data', data => {
+    return process.stdout.write(data);
+    done();
   });
-
-  // Run server on default port
-  server
-    .listen(port, function() {
-      util.log('---------------------------------------');
-      util.log('Local: http://localhost:%d', server.address().port);
-      util.log('---------------------------------------');
-      done();
-    })
-    .on('error', function(error) {
-      util.log('[express]', error.message);
-    });
 });
 
 gulp.task('server:release', (done) => {

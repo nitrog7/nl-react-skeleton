@@ -5,10 +5,19 @@ import DemoButton from 'components/DemoButton';
 export class HomeView extends React.Component {
   constructor(props) {
     super(props);
+    this.state = props;
   }
 
   componentDidMount() {
     AppStore.addChangeListener(this._onChange);
+
+    // Get data from Falcor store
+    FalcorStore.get('hello').then(data => {
+      this.setState({
+        hello: AppStore.get('hello'),
+        helloFalcor: data.hello
+      });
+    });
   }
 
   componentWillUnmount() {
@@ -16,17 +25,14 @@ export class HomeView extends React.Component {
   }
 
   _onChange() {
-
   }
 
   render() {
-    let hello = AppStore.get('hello');
-    let helloFalcor = FalcorStore.get('hello');
-    console.log('helloFalcor', helloFalcor);
     return (
       <div className='container text-center'>
         <h1>NL React Falcor Skeleton</h1>
-        <p>{hello}</p>
+        <p>AppStore: {this.state.hello}</p>
+        <p>FalcorStore: {this.state.helloFalcor}</p>
         <DemoButton/>
       </div>
     );

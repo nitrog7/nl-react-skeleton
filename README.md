@@ -16,6 +16,7 @@ Just clone the repo and install the necessary node modules:
 ```shell
 $ npm install                   # Install Node modules listed in ./package.json (may take a while the first time)
 $ npm install -g gulp           # Install Gulp
+$ npm install -g nodemon        # Install Nodemon
 $ gulp                          # Compile and launch
 ```
 
