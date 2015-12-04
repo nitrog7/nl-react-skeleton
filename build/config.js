@@ -59,8 +59,8 @@ config.path = {
   tmp: 'tmp',
   doc: './doc',
   test: {
-    e2e: config.relative(config.directories.test, '/e2e/**/*.js'),
-    unit: config.relative(config.directories.test, '/unit/**/*.spec.js')
+    e2e: config.relative(config.directories.test, 'e2e/**/*.js'),
+    unit: config.relative(config.directories.test, 'unit/**/*.spec.js')
   }
 };
 

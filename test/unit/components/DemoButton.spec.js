@@ -1,17 +1,21 @@
+jest.dontMock('../../../src/components/DemoButton');
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import DemoButton from 'components/DemoButton';
+
+const DemoButton = require('../../../src/components/DemoButton');
 
 describe('DemoButton', () => {
-  let rendered;
+  it('changes the text after click', () => {
+    // Render a checkbox with label in the document
+    let component = TestUtils.renderIntoDocument(
+      <DemoButton/>
+    );
 
-  beforeEach(function() {
-    let props = {};
-    rendered = TestUtils.renderIntoDocument(<DemoButton {...props} />);
-  });
+    let node = ReactDOM.findDOMNode(component);
 
-  it('(Meta) Should have a test that works with Jasmine expectations.', () => {
-    expect(true).toBeTruthy();
+    // Verify label
+    expect(node.textContent).toEqual('Demo');
   });
 });
