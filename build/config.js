@@ -193,14 +193,7 @@ config.webpack = {
       {
         loader: 'babel',
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        query: {
-          cacheDirectory: true,
-          stage: 0,
-          optional: [
-            'es7.classProperties'
-          ]
-        }
+        exclude: /node_modules/
       }
     ]
   },

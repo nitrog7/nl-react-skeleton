@@ -48,29 +48,7 @@ gulp.task('server:dev', (done) => {
     {
       loader: 'babel',
       test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      query: {
-        cacheDirectory: true,
-        stage: 0,
-        optional: [
-          'es7.classProperties'
-        ],
-        plugins: ['react-transform'],
-        extra: {
-          'react-transform': {
-            transforms: [
-              {
-                transform: 'react-transform-hmr',
-                imports: ['react'],
-                locals: ['module']
-              }, {
-                transform: 'react-transform-catch-errors',
-                imports: ['react', 'redbox-react']
-              }
-            ]
-          }
-        }
-      }
+      exclude: /node_modules/
     }
   ];
 
