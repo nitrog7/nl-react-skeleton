@@ -52,7 +52,7 @@ gulp.task('server:dev', (done) => {
     }
   ];
 
-  let compiler = webpack(config.webpack, error => {
+  let compiler = webpack(config.webpack, (error) => {
     if(error) {
       throw new util.PluginError('webpack', error);
     }
