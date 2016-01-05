@@ -1,11 +1,11 @@
 import gulp from 'gulp';
-import runSequence from 'gulp-run-sequence';
+import runSequence from 'run-sequence';
 
 gulp.task('default', ['dev']);
 gulp.task('dev', (done) => {
   runSequence(
     'clean',
-    'css:watch',
+    ['css:watch', 'img:watch'],
     'server:dev',
     done
   );

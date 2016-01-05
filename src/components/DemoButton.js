@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class DemoButton extends React.Component {
+export default class DemoButton extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -11,5 +11,3 @@ export class DemoButton extends React.Component {
     );
   }
 }
-
-export default DemoButton;

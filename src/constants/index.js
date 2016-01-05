@@ -1,2 +1,3 @@
-export { default as AppConstants } from './app';
-export { default as FalcorConstants } from './falcor';
+export { default as AppConstants } from './AppConstants';
+export { default as FalcorConstants } from './FalcorConstants';
+

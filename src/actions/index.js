@@ -1,2 +1,2 @@
-export { default as AppActions } from './app';
-export { default as FalcorActions } from './falcor';
+export { default as AppActions } from './AppActions';
+export { default as FalcorActions } from './FalcorActions';

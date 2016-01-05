@@ -1,5 +1,5 @@
-import AppDispatcher from '../dispatcher/AppDispatcher';
-import AppConstants from '../constants/app';
+import AppDispatcher from 'dispatcher/AppDispatcher';
+import AppConstants from 'constants/AppConstants';
 import objectAssign from 'react/lib/Object.assign';
 import EventEmitter from 'events';
 
@@ -10,18 +10,18 @@ let _demo = {
 };
 
 let AppStore = objectAssign({}, EventEmitter.prototype, {
-  addChangeListener: function(cb) {
+  addChangeListener: (cb) => {
     this.on(CHANGE_EVENT, cb);
   },
-  removeChangeListener: function(cb) {
+  removeChangeListener: (cb) => {
     this.removeListener(CHANGE_EVENT, cb);
   },
-  get: id => {
+  get: (id) => {
     return _demo[id];
   }
 });
 
-AppDispatcher.register(function(payload) {
+AppDispatcher.register((payload) => {
   let action = payload.action;
 
   switch(action.actionType) {

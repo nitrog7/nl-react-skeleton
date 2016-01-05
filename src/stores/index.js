@@ -1,2 +1,3 @@
-export { default as AppStore } from './app';
-export { default as FalcorStore } from './falcor';
+export { default as AppStore } from './AppStore';
+export { default as FalcorStore } from './FalcorStore';
+

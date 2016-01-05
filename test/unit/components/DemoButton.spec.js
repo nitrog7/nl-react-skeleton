@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import DemoButton from 'components/DemoButton';
 
+let expect = require('chai').expect;
+let assert = require('assert');
+
 describe('DemoButton', () => {
-  let rendered;
+  it('(Meta) Should have a test that works with Mocha expectations.', () => {
+    // Render a component
+    let component = TestUtils.renderIntoDocument(<DemoButton/>);
 
-  beforeEach(function() {
-    let props = {};
-    rendered = TestUtils.renderIntoDocument(<DemoButton {...props} />);
-  });
-
-  it('(Meta) Should have a test that works with Jasmine expectations.', () => {
-    expect(true).toBeTruthy();
+    // Verify component
+    expect(component).to.be.ok;
   });
 });

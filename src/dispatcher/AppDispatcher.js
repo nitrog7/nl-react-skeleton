@@ -2,10 +2,10 @@ import { Dispatcher } from 'flux';
 
 let AppDispatcher = new Dispatcher();
 
-AppDispatcher.handleAppAction = action => {
+AppDispatcher.handleAppAction = (action) => {
   this.dispatch({
     source: 'APP_ACTION',
-    action: action
+    action
   });
 };
 

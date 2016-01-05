@@ -28,14 +28,15 @@ module.exports = function(cfg) {
     // Frameworks to use
     // Available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: [
-      'jasmine'
+      'mocha', 'chai-sinon'
     ],
 
     plugins: [
       'karma-webpack',
-      'karma-jasmine',
+      'karma-mocha',
       'karma-coverage',
       'karma-phantomjs-launcher',
+      'karma-chai-sinon',
       'karma-spec-reporter',
       'karma-sourcemap-loader'
     ],
