@@ -28,11 +28,11 @@ import childProcess from 'child_process';
 gulp.task('server:dev', (done) => {
   let exec = childProcess.exec;
   let proc = exec('nodemon --watch model development.js');
-  proc.stderr.on('data', data => {
+  proc.stderr.on('data', (data) => {
     return process.stdout.write(data);
     done();
   });
-  proc.stdout.on('data', data => {
+  proc.stdout.on('data', (data) => {
     return process.stdout.write(data);
     done();
   });
