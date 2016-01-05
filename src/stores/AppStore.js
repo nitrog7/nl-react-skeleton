@@ -3,18 +3,16 @@ import AppConstants from 'constants/AppConstants';
 import objectAssign from 'react/lib/Object.assign';
 import EventEmitter from 'events';
 
-let CHANGE_EVENT = 'change';
-
 let _demo = {
   hello: 'Hello World'
 };
 
 let AppStore = objectAssign({}, EventEmitter.prototype, {
   addChangeListener: (cb) => {
-    this.on(CHANGE_EVENT, cb);
+    AppStore.on(AppConstants.CHANGE_EVENT, cb);
   },
   removeChangeListener: (cb) => {
-    this.removeListener(CHANGE_EVENT, cb);
+    AppStore.removeListener(AppConstants.CHANGE_EVENT, cb);
   },
   get: (id) => {
     return _demo[id];

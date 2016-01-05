@@ -9,10 +9,10 @@ AppDispatcher.handleAppAction = (action) => {
   });
 };
 
-AppDispatcher.handleFalcorAction = action => {
+AppDispatcher.handleFalcorAction = (action) => {
   this.dispatch({
     source: 'FALCOR_ACTION',
-    action: action
+    action
   });
 };
 
