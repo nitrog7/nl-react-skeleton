@@ -1,9 +1,11 @@
 import React from 'react';
-import { Router, Route } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import * as views from 'views';
 
 const {
-  HomeView
+  HomeView,
+  LayoutView
   } = views;
 
 export default class App extends React.Component {
@@ -13,8 +15,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Route path='/' component={HomeView} />
+      <Router history={createBrowserHistory()}>
+        <Route path='/' component={LayoutView}>
+          <IndexRoute path='/' component={HomeView} />
+        </Route>
       </Router>
     );
   }
