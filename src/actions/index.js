@@ -1,1 +1,1 @@
-export { default as AppActions } from './app';
+export { default as AppActions } from './AppActions';

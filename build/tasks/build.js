@@ -5,7 +5,7 @@ gulp.task('default', ['dev']);
 gulp.task('dev', (done) => {
   runSequence(
     'clean',
-    'css:watch',
+    ['css:watch', 'img:watch'],
     'server:dev',
     done
   );

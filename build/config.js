@@ -53,7 +53,8 @@ config.path = {
 
   dist: {
     css: config.relative(config.directories.dist, 'css/'),
-    fonts: config.relative(config.directories.dist, 'fonts/')
+    fonts: config.relative(config.directories.dist, 'fonts/'),
+    img: config.relative(config.directories.dist, 'img/')
   },
 
   tmp: 'tmp',
@@ -171,6 +172,7 @@ config.webpack = {
       {actions: './' + config.directories.src + '/actions'},
       {components: './' + config.directories.src + '/components'},
       {constants: './' + config.directories.src + '/constants'},
+      {dispatcher: './' + config.directories.src + '/dispatcher'},
       {services: './' + config.directories.src + '/services'},
       {stores: './' + config.directories.src + '/stores'},
       {styles: './' + config.directories.src + '/styles'},
