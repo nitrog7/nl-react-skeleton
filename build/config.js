@@ -11,7 +11,8 @@ let config = {
   },
 
   filenames: {
-    index: 'index.html'
+    index: 'index.html',
+    icons: 'icons.svg'
   },
 
   directories: {
@@ -48,13 +49,17 @@ config.path = {
       files: [
         'node_modules/font-awesome/fonts/*.{otf,eot,svg,ttf,woff,woff2}'
       ]
+    },
+    icons: {
+      files: config.relative(config.directories.src, 'icons/*.svg')
     }
   },
 
   dist: {
     css: config.relative(config.directories.dist, 'css/'),
     fonts: config.relative(config.directories.dist, 'fonts/'),
-    img: config.relative(config.directories.dist, 'img/')
+    img: config.relative(config.directories.dist, 'img/'),
+    icons: config.relative(config.directories.dist, 'icons/')
   },
 
   tmp: 'tmp',

@@ -17,7 +17,7 @@ export default class App extends React.Component {
     return (
       <Router history={createBrowserHistory()}>
         <Route path='/' component={LayoutView}>
-          <IndexRoute path='/' component={HomeView} />
+          <IndexRoute component={HomeView} />
         </Route>
       </Router>
     );

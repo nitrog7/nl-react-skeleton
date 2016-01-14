@@ -3,10 +3,10 @@ NL React Skeleton
 
 A simple skeleton to start you off on your ReactJS project. Uses the following:
 
-- React v0.14.3 (https://facebook.github.io/react)
-- React Router v1.0.0 (https://github.com/rackt/react-router)
+- React v0.14.6 (https://facebook.github.io/react)
+- React Router v1.0.3 (https://github.com/rackt/react-router)
 - Flux v2.1.1 (http://facebook.github.io/flux)
-- Falcor v0.1.14 (http://netflix.github.io/falcor)
+- Falcor v0.1.15 (http://netflix.github.io/falcor)
 
 Getting Started
 ---------------
