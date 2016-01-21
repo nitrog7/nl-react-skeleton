@@ -1,5 +1,11 @@
 @import '../../../node_modules/bootstrap/scss/variables';
 
+$body-bg: transparent;
+
+$font-url-path: '/fonts';
+$font-family-sans-serif: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+
 // Colors - Palette
 $color-primary-1-lighter: #fbecef;
 $color-primary-1-light: #de556b;

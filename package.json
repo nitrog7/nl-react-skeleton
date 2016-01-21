@@ -2,6 +2,7 @@
   "name": "nl-react-skeleton",
   "version": "0.1.0",
   "description": "NL React Skeleton",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/nitrog7/nl-react-skeleton.git#falcor"
@@ -18,7 +19,7 @@
     "Giraldo Rosales <giraldo@nitrogenlabs.com>"
   ],
   "engines": {
-    "node": "5.4.1",
+    "node": "5.5.0",
     "npm": "3.3.12"
   },
   "dependencies": {
@@ -30,18 +31,16 @@
     "falcor-http-datasource": "^0.1.2",
     "falcor-json-graph": "^1.1.7",
     "falcor-router": "^0.2.12",
-    "flux": "^2.1.1",
-    "history": "1.17.0",
-    "lodash": "^3.10.1",
+    "history": "2.0.0-rc2",
+    "lodash": "^4.0.0",
     "react": "^0.14.6",
     "react-addons-update": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-router": "1.0.3",
-    "yargs": "^3.31.0"
+    "react-router": "2.0.0-rc5"
   },
   "devDependencies": {
-    "autoprefixer": "^6.2.3",
-    "babel-core": "^6.4.0",
+    "autoprefixer": "^6.3.1",
+    "babel-core": "^6.4.5",
     "babel-eslint": "^5.0.0-beta6",
     "babel-loader": "^6.2.1",
     "babel-plugin-react-transform": "^2.0.0",
@@ -69,7 +68,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.1.1",
-    "gulp-svgmin": "^1.2.0",
+    "gulp-svgmin": "^1.2.1",
     "gulp-svgstore": "^5.0.5",
     "gulp-util": "^3.0.7",
     "gulp-yuidoc": "^0.1.2",
@@ -81,7 +80,7 @@
     "karma-coverage": "^0.5.3",
     "karma-mocha": "^0.2.1",
     "karma-phantomjs-launcher": "^0.2.2",
-    "karma-sourcemap-loader": "^0.3.6",
+    "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.23",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.3.4",
@@ -103,8 +102,9 @@
     "sinon-chai": "^2.8.0",
     "vinyl-paths": "^2.1.0",
     "webpack": "^1.12.11",
-    "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-middleware": "^1.5.0",
     "webpack-hot-middleware": "^2.6.0",
-    "yuidocjs": "0.9.0"
+    "yargs": "^3.32.0",
+    "yuidocjs": "^0.9.0"
   }
 }
