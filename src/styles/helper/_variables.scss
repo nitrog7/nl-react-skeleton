@@ -1,1 +1,47 @@
 @import '../../../node_modules/bootstrap/scss/variables';
+
+$body-bg: transparent;
+
+$font-url-path: '/fonts';
+$font-family-sans-serif: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+// Colors - Palette
+$color-primary-1-lighter: #fbecef;
+$color-primary-1-light: #de556b;
+$color-primary-1-normal: #cf0a2c;
+$color-primary-1-dark: #900720;
+$color-primary-1-darker: #3c0310;
+
+$color-primary-2-lighter: #dcfaff;
+$color-primary-2-light: #9cf0ff;
+$color-primary-2-normal: #009ade;
+$color-primary-2-dark: #006d9c;
+$color-primary-2-darker: #003144;
+
+$color-accent-1-lighter: #fbdda5;
+$color-accent-1-light: #ffd963;
+$color-accent-1-normal: #f5a71b;
+$color-accent-1-dark: #aa7412;
+$color-accent-1-darker: #5f4109;
+
+$color-accent-2-lighter: #b6f0d8;
+$color-accent-2-light: #4ee0a8;
+$color-accent-2-normal: #00d484;
+$color-accent-2-dark: #00955d;
+$color-accent-2-darker: #004129;
+
+$color-neutral-lighter: #f7f7f7;
+$color-neutral-light: #efefef;
+$color-neutral-normal: #cacaca;
+$color-neutral-dark: #bbb;
+$color-neutral-darker: #959595;
+
+$color-black: #333;
+$color-white: #fff;
+
+// Colors - Status
+$color-hover: $color-primary-2-normal;
+$color-success: $color-accent-2-normal;
+$color-warning: $color-accent-1-normal;
+$color-danger: $color-primary-1-dark;
