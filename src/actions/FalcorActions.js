@@ -1,36 +1,21 @@
-import AppDispatcher from '../dispatcher/AppDispatcher';
-import FalcorConstants from '../constants/falcor';
+import Dispatcher from 'dispatcher/Dispatcher';
+import { FalcorConstants } from 'constants';
 
 let FalcorActions = {
-  getValue: function(path) {
-    AppDispatcher.handleFalcorAction({
-      actionType: FalcorConstants.FALCOR_GET_VALUE,
-      data: path
-    });
+  getValue: path => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_GET_VALUE, path);
   },
-  get: function(...pathSet) {
-    AppDispatcher.handleFalcorAction({
-      actionType: FalcorConstants.FALCOR_GET,
-      data: pathSet
-    });
+  get: (...pathSet) => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_GET, pathSet);
   },
-  setValue: function(path) {
-    AppDispatcher.handleFalcorAction({
-      actionType: FalcorConstants.FALCOR_SET_VALUE,
-      data: path
-    });
+  setValue: path => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_SET_VALUE, path);
   },
-  set: function(...pathValue) {
-    AppDispatcher.handleFalcorAction({
-      actionType: FalcorConstants.FALCOR_SET,
-      data: pathValue
-    });
+  set: (...pathValue) => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_SET, pathValue);
   },
-  call: function(path, arg, ref, thisPath) {
-    AppDispatcher.handleFalcorAction({
-      actionType: FalcorConstants.FALCOR_CALL,
-      data: [path, arg, ref, thisPath]
-    });
+  call: (path, arg, ref, thisPath) => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_CALL, [path, arg, ref, thisPath]);
   }
 };
 

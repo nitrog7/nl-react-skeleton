@@ -12,7 +12,7 @@ export class HomeView extends React.Component {
     AppStore.addChangeListener(this._onChange);
 
     // Get data from Falcor store
-    FalcorStore.get('hello').then((data) => {
+    FalcorStore.get('hello').then(data => {
       this.setState({
         hello: AppStore.get('hello'),
         helloFalcor: data.hello

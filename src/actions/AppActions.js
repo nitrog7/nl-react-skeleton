@@ -1,8 +1,8 @@
-import AppDispatcher from 'dispatcher/Dispatcher';
+import Dispatcher from 'dispatcher/Dispatcher';
 import AppConstants from 'constants/app';
 
 let AppActions = {
-  get: function(id) {
+  get: id => {
     Dispatcher.dispatch(AppConstants.APP_GET, id);
   }
 };
