@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import runSequence from 'run-sequence';
 
 gulp.task('default', ['dev']);
-gulp.task('dev', (done) => {
+gulp.task('dev', done => {
   runSequence(
     'clean',
     ['css:watch', 'img:watch'],
@@ -11,7 +11,7 @@ gulp.task('dev', (done) => {
   );
 });
 
-gulp.task('release', (done) => {
+gulp.task('release', done => {
   runSequence(
     'compile',
     'server:release',
@@ -19,7 +19,7 @@ gulp.task('release', (done) => {
   );
 });
 
-gulp.task('compile', (done) => {
+gulp.task('compile', done => {
   runSequence(
     'clean',
     ['css:release', 'js:release'],
