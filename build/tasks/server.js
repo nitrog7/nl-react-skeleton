@@ -38,7 +38,7 @@ gulp.task('server:dev', (done) => {
   });
 });
 
-gulp.task('server:release', (done) => {
+gulp.task('server:release', done => {
   let port = config.port.release;
 
   app.use(bodyParser.json());

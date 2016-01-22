@@ -65,7 +65,7 @@
     "babel/generator-star-spacing": 1,
     "babel/new-cap": 1,
     "babel/object-shorthand": 1,
-    "babel/arrow-parens": 1,
+    "babel/arrow-parens": [2, "as-needed"],
     "babel/no-await-in-loop": 1,
     "react/display-name": 0,
     "react/jsx-boolean-value": 2,

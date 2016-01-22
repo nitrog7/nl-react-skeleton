@@ -1,35 +1,40 @@
-import AppDispatcher from 'dispatcher/AppDispatcher';
-import AppConstants from 'constants/AppConstants';
-import objectAssign from 'react/lib/Object.assign';
-import EventEmitter from 'events';
+import { Dispatcher, Store } from 'nl-flux';
+import { AppConstants } from 'constants';
 
-let _demo = {
-  hello: 'Hello World'
-};
+console.log('Dispatcher', Dispatcher);
+class AppStore extends Store {
+  constructor() {
+    super();
 
-let AppStore = objectAssign({}, EventEmitter.prototype, {
-  addChangeListener: (cb) => {
-    AppStore.on(AppConstants.CHANGE_EVENT, cb);
-  },
-  removeChangeListener: (cb) => {
-    AppStore.removeListener(AppConstants.CHANGE_EVENT, cb);
-  },
-  get: (id) => {
-    return _demo[id];
+    this.demo = {
+      hello: 'Hello World'
+    };
   }
-});
 
-AppDispatcher.register((payload) => {
-  let action = payload.action;
+  onAction(action) {
+    switch(action.type) {
+      case AppConstants.APP_GET:
+        this.getData(action.data);
+        break;
 
-  switch(action.actionType) {
-    case AppConstants.APP_GET:
-      AppStore.get(action.data);
-      break;
-
-    default:
-      return true;
+      default:
+        return true;
+    }
   }
-});
 
-export default AppStore;
+  addChangeListener(callback) {
+    this.on(AppConstants.CHANGE_EVENT, callback);
+  }
+
+  removeChangeListener(callback) {
+    this.removeListener(AppConstants.CHANGE_EVENT, callback);
+  }
+
+  getData(id) {
+    return this.demo[id];
+  }
+}
+
+let appStore = new AppStore();
+Dispatcher.registerStore(appStore);
+export default appStore;

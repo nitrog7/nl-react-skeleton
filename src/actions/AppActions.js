@@ -1,12 +1,9 @@
-import AppDispatcher from 'dispatcher/AppDispatcher';
+import { Dispatcher } from 'nl-flux';
 import AppConstants from 'constants/app';
 
 let AppActions = {
   get: function(id) {
-    AppDispatcher.handleAppAction({
-      actionType: AppConstants.APP_GET,
-      data: id
-    });
+    Dispatcher.dispatch(AppConstants.APP_GET, id);
   }
 };
 

@@ -3,10 +3,14 @@ NL React Skeleton
 
 A simple skeleton to start you off on your ReactJS project. Uses the following:
 
-- React v0.14.3 (https://facebook.github.io/react)
-- React Router v1.0.0 (https://github.com/rackt/react-router)
-- Flux v2.1.1 (http://facebook.github.io/flux)
-- Falcor v0.1.14 (http://netflix.github.io/falcor)
+- React v0.14.6 (https://facebook.github.io/react)
+- React Router v2.0.0-rc5 (https://github.com/rackt/react-router)
+- NL Flux v0.1.3 (http://https://github.com/nitrog7/nl-flux)
+- Falcor v0.1.15 (http://netflix.github.io/falcor)
+
+Checkout additional skeleton versions:
+
+- Falcor (https://github.com/nitrog7/nl-react-skeleton/tree/falcor)
 
 Getting Started
 ---------------
@@ -62,7 +66,6 @@ The folder structure provided is only meant to serve as a guide, it is by no mea
 |   ├── actions              # Flux actions
 |   ├── components           # React components
 |   ├── constants            # Flux constants
-|   ├── dispatcher           # Flux dispatchers
 |   ├── stores               # Flux stores
 |   ├── styles               # CSS styles
 |   ├── views                # Components that live at a route
@@ -82,10 +85,12 @@ You can redefine which packages to treat as vendor dependencies by editing `vend
 
 ```js
 [
-  'history',
+  'lodash',
+  'nl-flux',
   'react',
-  'react-router',
-  'flux'
+  'react-addons-update',
+  'react-dom',
+  'react-router'
 ]
 ```
 
@@ -101,6 +106,7 @@ import MyComponent from 'components/my-component'; // with alias
   components  => '~/src/components'
   constants   => '~/src/constants'
   services    => '~/src/services'
+  stores      => '~/src/stores'
   styles      => '~/src/styles'
   utils       => '~/src/utils'
   views       => '~/src/views'

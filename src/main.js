@@ -5,8 +5,4 @@ import App from 'components/App';
 const target = document.getElementById('main');
 
 // Render initial ReactJS code
-ReactDOM.render(
-  <App />,
-  target
-);
-
+ReactDOM.render(<App />, target);

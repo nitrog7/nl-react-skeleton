@@ -1,6 +1,6 @@
 let AppConstants = {
-  CHANGE_EVENT: 'CHANGE_EVENT',
-  APP_GET: 'APP_GET'
+  APP_GET: 'APP_GET',
+  CHANGE_EVENT: 'CHANGE_EVENT'
 };
 
 export default AppConstants;
