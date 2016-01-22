@@ -2,17 +2,17 @@ import { Dispatcher } from 'nl-flux';
 import { FalcorConstants } from 'constants';
 
 let FalcorActions = {
-  getValue: data => {
-    Dispatcher.dispatch(FalcorConstants.FALCOR_GET_VALUE, data);
+  getValue: path => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_GET_VALUE, path);
   },
-  get: data => {
-    Dispatcher.dispatch(FalcorConstants.FALCOR_GET, data);
+  get: (...pathSet) => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_GET, pathSet);
   },
-  setValue: data => {
-    Dispatcher.dispatch(FalcorConstants.FALCOR_SET_VALUE, data);
+  setValue: path => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_SET_VALUE, path);
   },
-  set: data => {
-    Dispatcher.dispatch(FalcorConstants.FALCOR_SET, data);
+  set: (...pathValue) => {
+    Dispatcher.dispatch(FalcorConstants.FALCOR_SET, pathValue);
   },
   call: (path, arg, ref, thisPath) => {
     Dispatcher.dispatch(FalcorConstants.FALCOR_CALL, [path, arg, ref, thisPath]);
