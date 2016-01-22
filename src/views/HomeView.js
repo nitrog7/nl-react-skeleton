@@ -5,6 +5,14 @@ import DemoButton from 'components/DemoButton';
 export class HomeView extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {};
+  }
+
+  componentWillMount() {
+    this.setState({
+      hello: AppStore.getData('hello')
+    });
   }
 
   componentDidMount() {
@@ -20,12 +28,10 @@ export class HomeView extends React.Component {
   }
 
   render() {
-    let hello = AppStore.getData('hello');
-
     return (
       <div className='container text-center'>
         <h1>NL React Skeleton</h1>
-        <p>{hello}</p>
+        <p>{this.state.hello}</p>
         <DemoButton/>
       </div>
     );

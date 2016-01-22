@@ -2,7 +2,7 @@ import { Dispatcher } from 'nl-flux';
 import AppConstants from 'constants/app';
 
 let AppActions = {
-  get: function(id) {
+  get: id => {
     Dispatcher.dispatch(AppConstants.APP_GET, id);
   }
 };

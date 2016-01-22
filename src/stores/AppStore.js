@@ -1,7 +1,6 @@
 import { Dispatcher, Store } from 'nl-flux';
 import { AppConstants } from 'constants';
 
-console.log('Dispatcher', Dispatcher);
 class AppStore extends Store {
   constructor() {
     super();
