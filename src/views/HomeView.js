@@ -20,7 +20,7 @@ export class HomeView extends React.Component {
   }
 
   render() {
-    let hello = AppStore.get('hello');
+    let hello = AppStore.getData('hello');
 
     return (
       <div className='container text-center'>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import * as views from 'views';
 
 const {
@@ -8,18 +7,20 @@ const {
   LayoutView
   } = views;
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <Router history={createBrowserHistory()}>
+      <Router history={browserHistory}>
         <Route path='/' component={LayoutView}>
-          <IndexRoute path='/' component={HomeView} />
+          <IndexRoute component={HomeView} />
         </Route>
       </Router>
     );
   }
 }
+
+export default App;

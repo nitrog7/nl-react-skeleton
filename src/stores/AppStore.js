@@ -1,20 +1,20 @@
-import Dispatcher from 'dispatcher/Dispatcher';
-import Store from 'stores/Store';
+import { Dispatcher, Store } from 'nl-flux';
 import { AppConstants } from 'constants';
 
-let _demo = {
-  hello: 'Hello World'
-};
-
+console.log('Dispatcher', Dispatcher);
 class AppStore extends Store {
   constructor() {
     super();
+
+    this.demo = {
+      hello: 'Hello World'
+    };
   }
 
   onAction(action) {
     switch(action.type) {
       case AppConstants.APP_GET:
-        this.get(action.data);
+        this.getData(action.data);
         break;
 
       default:
@@ -30,8 +30,8 @@ class AppStore extends Store {
     this.removeListener(AppConstants.CHANGE_EVENT, callback);
   }
 
-  get(id) {
-    return _demo[id];
+  getData(id) {
+    return this.demo[id];
   }
 }
 

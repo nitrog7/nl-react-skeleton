@@ -1,4 +1,4 @@
-import AppDispatcher from 'dispatcher/Dispatcher';
+import { Dispatcher } from 'nl-flux';
 import AppConstants from 'constants/app';
 
 let AppActions = {

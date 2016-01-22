@@ -96,7 +96,7 @@ config.karma = {
 config.yuidoc = {
   parser: {
     project: {
-      name: "YUI Documentation",
+      name: "NL React Skeleton",
       description: "YUIDoc documentation generated from JavaScript",
       version: "0.1.0",
       url: "http://yuilibrary.com/projects/yuidoc",
@@ -127,10 +127,12 @@ config.webpack = {
       config.path.src.entry
     ],
     vendor: [
-      'history',
+      'lodash',
+      'nl-flux',
       'react',
-      'react-router',
-      'flux'
+      'react-addons-update',
+      'react-dom',
+      'react-router'
     ]
   },
   output: {
@@ -172,7 +174,6 @@ config.webpack = {
       {actions: './' + config.directories.src + '/actions'},
       {components: './' + config.directories.src + '/components'},
       {constants: './' + config.directories.src + '/constants'},
-      {dispatcher: './' + config.directories.src + '/dispatcher'},
       {services: './' + config.directories.src + '/services'},
       {stores: './' + config.directories.src + '/stores'},
       {styles: './' + config.directories.src + '/styles'},
