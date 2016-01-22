@@ -134,13 +134,13 @@ config.webpack = {
     vendor: [
       'lodash',
       'falcor',
+      'falcor-http-datasource',
       'falcor-json-graph',
-      'falcor-http-datasource'
       'nl-flux',
       'react',
       'react-addons-update',
       'react-dom',
-      'react-router',
+      'react-router'
     ]
   },
   output: {
