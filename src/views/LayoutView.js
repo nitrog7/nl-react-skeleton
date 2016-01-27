@@ -1,18 +1,14 @@
 import React from 'react';
 
 class LayoutView extends React.Component {
-  static propTypes() {
+  static get propTypes() {
     return {
-      children: React.PropTypes.object,
-      route: React.PropTypes.object,
-      routes: React.PropTypes.array
+      children: React.PropTypes.object
     };
   }
 
-  static defaultProps() {
+  static get defaultProps() {
     return {
-      route: {},
-      routes: []
     };
   }
 
