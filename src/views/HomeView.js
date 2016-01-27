@@ -2,7 +2,7 @@ import React from 'react';
 import { AppStore } from 'stores/index';
 import DemoButton from 'components/DemoButton';
 
-export class HomeView extends React.Component {
+export default class HomeView extends React.Component {
   constructor(props) {
     super(props);
 
@@ -37,5 +37,3 @@ export class HomeView extends React.Component {
     );
   }
 }
-
-export default HomeView;

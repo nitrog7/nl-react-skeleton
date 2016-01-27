@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'components/App';
+import AppView from 'views/AppView';
 
 const target = document.getElementById('main');
 
 // Render initial ReactJS code
-ReactDOM.render(<App />, target);
+ReactDOM.render(<AppView />, target);

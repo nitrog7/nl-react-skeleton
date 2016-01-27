@@ -11,7 +11,10 @@ let config = {
   },
 
   filenames: {
-    index: 'index.html'
+    entry: 'main.js',
+    index: 'index.html',
+    icons: 'icons.svg',
+    scss: 'core.scss'
   },
 
   directories: {
@@ -28,11 +31,11 @@ config.relative = (...args) => [...args].join('/');
 
 config.path = {
   src: {
-    entry: config.absolute(config.directories.src, 'main.js'),
+    entry: config.absolute(config.directories.src, config.filenames.entry),
     js: config.relative(config.directories.src, '**/*.js'),
     html: config.relative(config.directories.src, '**/*.html'),
     scss: {
-      main: config.relative(config.directories.src, 'styles/core.scss'),
+      main: config.relative(config.directories.src, 'styles/', config.filenames.scss),
       files: [
         config.relative(config.directories.src, 'styles/**/*.scss')
       ],
@@ -48,12 +51,16 @@ config.path = {
       files: [
         'node_modules/font-awesome/fonts/*.{otf,eot,svg,ttf,woff,woff2}'
       ]
+    },
+    icons: {
+      files: config.relative(config.directories.src, 'icons/*.svg')
     }
   },
 
   dist: {
     css: config.relative(config.directories.dist, 'css/'),
     fonts: config.relative(config.directories.dist, 'fonts/'),
+    icons: config.relative(config.directories.dist, 'icons/'),
     img: config.relative(config.directories.dist, 'img/')
   },
 
@@ -96,8 +103,8 @@ config.karma = {
 config.yuidoc = {
   parser: {
     project: {
-      name: "NL React Skeleton",
-      description: "YUIDoc documentation generated from JavaScript",
+      name: "Nitrogen Labs",
+      description: "Documentation",
       version: "0.1.0",
       url: "http://yuilibrary.com/projects/yuidoc",
       logo: "http://yuilibrary.com/img/yui-logo.png",
@@ -165,9 +172,7 @@ config.webpack = {
       '.jsx'],
     modulesDirectories: [
       config.directories.src,
-      'web_loaders',
-      'web_modules',
-      'node_loaders',
+      'node_dev',
       'node_modules'
     ],
     alias: [
