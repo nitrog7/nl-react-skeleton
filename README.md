@@ -6,7 +6,6 @@ A simple skeleton to start you off on your ReactJS project. Uses the following:
 - React v0.14.6 (https://facebook.github.io/react)
 - React Router v2.0.0-rc5 (https://github.com/rackt/react-router)
 - NL Flux v0.1.4 (http://https://github.com/nitrog7/nl-flux)
-- Falcor v0.1.15 (http://netflix.github.io/falcor)
 
 Checkout additional skeleton versions:
 

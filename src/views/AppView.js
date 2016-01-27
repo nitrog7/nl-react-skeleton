@@ -7,7 +7,7 @@ const {
   LayoutView
   } = views;
 
-class App extends React.Component {
+export default class AppView extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -22,5 +22,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;

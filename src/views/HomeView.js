@@ -2,10 +2,11 @@ import React from 'react';
 import { AppStore, FalcorStore } from 'stores/index';
 import DemoButton from 'components/DemoButton';
 
-export class HomeView extends React.Component {
+export default class HomeView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props;
+
+    this.state = {};
   }
 
   componentWillMount() {
@@ -38,5 +39,3 @@ export class HomeView extends React.Component {
     );
   }
 }
-
-export default HomeView;

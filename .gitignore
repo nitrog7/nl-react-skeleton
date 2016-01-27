@@ -2,6 +2,7 @@
 *.log
 .idea
 /node_modules
+/node_dev
 /dist
 /dev
 /coverage
