@@ -196,6 +196,7 @@ config.webpack = {
     ]
   },
   module: {
+    noParse: /node_modules\/quill\/dist/,
     preLoaders: [
       {
         test: /\.(js|jsx)$/,
